@@ -4,7 +4,7 @@
   "description": "Convert JSON to markdown.",
   "main": "dist/index.js",
   "bin": {
-    "json-to-markdown": "dist/index.js"
+    "j2m": "dist/index.js"
   },
   "private": true,
   "scripts": {
