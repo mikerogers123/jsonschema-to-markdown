@@ -1,12 +1,8 @@
 import { JsonSchema } from '../schema/json-schema';
-import { MarkdownGenerationResult } from './generation-result';
 import { log } from '../logging/logger';
 
-export const generateMarkdown = (schema: JsonSchema): MarkdownGenerationResult => {
-    log('Generating MD');
+export const generateMarkdown = (schema: JsonSchema): string => {
+    log.info('Generating MD');
 
-    return {
-        schema,
-        markdown: '#Title\n\nHello world'
-    }
+    return '#Title\n\nHello world';
 }

@@ -1,14 +1,14 @@
-import { loggerThemeMap } from './themes';
-import { LogCategory } from './log-category';
+import winston = require('winston');
 
-const logger = console.log;
+const fileName = process.env.npm_package_config_logoutput;
 
-export const log = (msg: string, category: LogCategory = LogCategory.Information) => {
-  const theme = loggerThemeMap[category];
-  logger(theme(msg));
-};
+export const log = winston.createLogger({
+  transports: [
+    new winston.transports.File({ filename: fileName })
+  ]
+});
 
-export const logBreak = () => log('----------------------------------------------------');
+export const logBreak = () => log.info('----------------------------------------------------');
 
 export const logChunk = (logFn: () => void) => {
   logBreak();

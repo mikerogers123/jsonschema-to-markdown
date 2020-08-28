@@ -1,6 +1,5 @@
 import { JsonSchema } from '../schema/json-schema';
 
-
 export const validateSchema = (schema: JsonSchema) => {
     const isValid = true;
 

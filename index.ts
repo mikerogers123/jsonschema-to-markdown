@@ -5,8 +5,6 @@ import { run } from './src/run';
 
 const argv = yargs.options({
   src: { type: 'string', default: '' },
-  dest: { type: 'string', default: '' }
 }).argv;
 
-run(argv);
-
+run(argv).then(console.log);
