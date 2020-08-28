@@ -1,11 +1,23 @@
 #!/usr/bin/env node
 
-import { program } from 'commander';
+import yargs = require('yargs');
 
-program
-  .version('0.0.1')
-  .description('A CLI for generating markdown from JSON')
-  .option('-s, --source', 'Path to the JSON files, used for generating to markdown')
-  .option('-d, --destination', 'Directory to send the output markdown files to');
+const argv = yargs.options({
+  src: { type: 'string', default: '' },
+  dest: { type: 'string', default: '' }
+}).argv;
 
-program.outputHelp();
+interface Options {
+  src?: string,
+  dest?: string
+}
+
+const run = (o: Options) => {
+  console.log(o.src);
+  console.log(o.dest);
+}
+
+run({
+  ...argv
+});
+
