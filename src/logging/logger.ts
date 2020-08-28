@@ -1,10 +1,9 @@
 import winston = require('winston');
-
-const fileName = process.env.npm_package_config_logoutput;
+import { config } from '../config';
 
 export const log = winston.createLogger({
   transports: [
-    new winston.transports.File({ filename: fileName })
+    new winston.transports.File({ filename: config.logOutput() })
   ]
 });
 
