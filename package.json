@@ -13,7 +13,7 @@
     "prebuild": "tslint -c tslint.json -p tsconfig.json --fix",
     "start": "node dist/index.js",
     "prestart": "npm run build",
-    "dev": "npm run build && ts-node index.ts --src \"C:\\temp\\j2m_in.json\" --dest \"home\""
+    "dev": "npm run build && ts-node index.ts --src \"C:\\temp\\j2m_in.json\" --dest \"C:\\temp\""
   },
   "author": "Mike Rogers",
   "devDependencies": {
