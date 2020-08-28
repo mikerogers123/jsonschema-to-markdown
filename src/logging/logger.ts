@@ -9,3 +9,11 @@ export const log = (msg: string, category: LogCategory = LogCategory.Information
 };
 
 export const logBreak = () => log('----------------------------------------------------');
+
+export const logChunk = (logFn: () => void) => {
+  logBreak();
+
+  logFn();
+
+  logBreak();
+};
