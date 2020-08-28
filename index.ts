@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 
 import yargs = require('yargs');
-import { generate } from 'src/generate-markdown';
+import { generate } from './src/generate-markdown';
 
 const argv = yargs.options({
   src: { type: 'string', default: '' },

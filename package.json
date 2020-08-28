@@ -12,7 +12,8 @@
     "build": "tsc -p .",
     "prebuild": "tslint -c tslint.json -p tsconfig.json --fix",
     "start": "node dist/index.js",
-    "prestart": "npm run build"
+    "prestart": "npm run build",
+    "dev": "npm run build && ts-node index.ts --src \"sauce\" --dest \"home\""
   },
   "author": "Mike Rogers",
   "devDependencies": {
@@ -25,8 +26,10 @@
     "typescript": "^3.8.3"
   },
   "dependencies": {
+    "@types/chalk": "^2.2.0",
     "@types/yargs": "^15.0.5",
     "chai": "^4.2.0",
+    "chalk": "^4.1.0",
     "codelyzer": "^6.0.0",
     "express": "^4.17.1",
     "mocha": "^7.1.1",
